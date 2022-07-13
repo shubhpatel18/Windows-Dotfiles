@@ -1,18 +1,33 @@
 # ABOUT
 
-This README contains information I like to have when configuring a Windows system. This repository is currently empty otherwise, but could eventually contains scripts/portable programs I want to have access to across machines.
+This README contains information I like to have when configuring a Windows system.
 
 # SSH AUTHENTICATION
 
-In an PowerShell prompt with Administrator privileges run the following commands.
+In an PowerShell prompt with Administrator privileges run the following command:
 
 ```
 > Set-Service -Name ssh-agent -StartupType Automatic
+```
+
+In a normal PowerShell prompt run the following commands:
+
+```
 > ssh-add
 > git config --global core.sshCommand C:/Windows/System32/OpenSSH/ssh.exe
 ```
 
 Now ssh-agent will always be running and have access to my ssh keys. Call `ssh-add` again as new keys are added.
+
+# POWERSHELL
+
+In a normal PowerShell prompt run the following command:
+
+```
+> Set-ExecutionPolicy -Scope CurrentUser Unrestricted
+```
+
+Now PowerShell scripts will be able to be run. Copy the contents of the WindowsPowerShell directory to %USERPROFILE%/Documents/WindowsPowerShell to get my PowerShell startup scripts.
 
 # WINDOWS SUBSYSTEM FOR LINUX
 

@@ -1,0 +1,1 @@
+Get-ChildItem $Env:USERPROFILE\Documents\WindowsPowerShell\startup | % { . $_.FullName }
