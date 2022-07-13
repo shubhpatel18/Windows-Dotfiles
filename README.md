@@ -13,8 +13,10 @@ In an PowerShell prompt with Administrator privileges run the following command:
 In a normal PowerShell prompt run the following commands:
 
 ```
+> Start-Service ssh-agent
 > ssh-add
-> git config --global core.sshCommand C:/Windows/System32/OpenSSH/ssh.exe
+> git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
+> git config --global ssh.varian "ssh"
 ```
 
 Now ssh-agent will always be running and have access to my ssh keys. Call `ssh-add` again as new keys are added.
